@@ -1,0 +1,203 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #004b87;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Allow header content to wrap on smaller screens */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-left: 20px;
+    flex: 1 1 100%; /* Ensure the title takes up full width in smaller screens */
+}
+
+/* Adjust profile position */
+.profile {
+    position: relative;
+    display: flex; /* Use flex to manage layout */
+    flex-direction: column; /* Stack the name and dropdown vertically */
+    align-items: flex-end;  /* Align profile items to the right */
+    margin-right: 10px;  /* Reduced margin to bring it closer */
+    flex: 1 1 100%;  /* Ensure it takes up full width on smaller screens */
+}
+
+.profile p {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    white-space: nowrap; /* Prevent name from breaking into multiple lines */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button styles */
+.dropbtn {
+    background-color: #004b87;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px; /* Adjust spacing between profile and dropdown button */
+}
+
+.dropbtn:hover {
+    background-color: #003c6d;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+    color: #333;
+    right: 0;   /* Align to right */
+    left: auto; /* Ensure left is not conflicting */
+    top: 100%;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Content section */
+.content {
+    margin: 20px;
+}
+
+/* Grades section */
+.grades {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.grades h2 {
+    margin-bottom: 10px;
+}
+
+
+.grades p {
+    margin-bottom: 10px;
+}
+
+.grades p strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+#term-dropdown {
+    width: 200px;
+    padding: 10px;
+    margin-top: 0;         /* remove extra space above dropdown */
+    margin-bottom: 20px;   /* space below dropdown */
+    border-radius: 5px;
+    font-size: 1rem;
+    
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .profile {
+        flex-direction: column; /* Stack name and dropdown vertically */
+        align-items: center; /* Center the profile on mobile */
+        margin: 10px 0;
+    }
+
+    /* Profile image styling */
+    .profile img {
+        width: 5px !important;  /* Default size */
+        height: 50px !important;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* Mobile responsiveness */
+    .profile img {
+        width: 40px !important; /* Smaller size for tablets/mobile */
+        height: 40px !important;
+    }
+
+    /* For very small screens (e.g., iPhones) */
+    @media (max-width: 480px) {
+        .profile img {
+            width: 30px !important;  /* Even smaller on small screens */
+            height: 30px !important;
+        }
+    }
+
+    .dropbtn {
+        width: 100%;
+    }
+
+    .content {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .grades {
+        padding: 15px;
+    }
+
+    #term-dropdown {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        width: 100%; /* Ensures dropdown is full width */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    .dropdown-content {
+        width: 100%;
+        left: 0;
+    }
+}
